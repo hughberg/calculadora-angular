@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script>
+       
+        var app=angular.module("micalc",[]);
+         app.controller("micalculadora", function($scope){
+                $scope.numero1="";
+                $scope.numero2="";
+                $scope.resultado="";
+        
+        $scope.sumar=function(){
+                $scope.resultado = $scope.numero1 + $scope.numero2; 
+                };
+        $scope.restar=function(){
+                $scope.resultado = $scope.numero1 - $scope.numero2;    
+                };
+        $scope.multiplicar=function(){
+                $scope.resultado = $scope.numero1 * $scope.numero2;    
+                };
+        $scope.dividir=function(){
+                $scope.resultado = $scope.numero1 / $scope.numero2;    
+                };                
+         });
+               
+        </script>
+        
+    </head>
+    <body>
+        <div ng-app="micalc" ng-controller="micalculadora">
+            Número 1: <input type="number" ng-model="numero1"/><br/>
+            Número 2: <input type="number" ng-model="numero2"/><br/>
+            <div>{{resultado}}</div>
+            <input type="button" value="sumar"  ng-click="sumar();"/>
+            <input type="button" value="restar"  ng-click="restar();"/><br/>
+            <input type="button" value="multiplicar"  ng-click="multiplicar();"/>
+            <input type="button" value="dividir"  ng-click="dividir();"/>  
+        </div>
+       
+    </body>
+</html>
